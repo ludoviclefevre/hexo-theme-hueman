@@ -1,26 +1,26 @@
 index:
-  home: 'Home'
-  about: 'About'
-  search: 'Search'
+  home: 'Accueil'
+  about: 'A propos'
+  search: 'Recherche'
   archive: 'archive'
-  category: 'category : '
+  category: 'categorie : '
   uncategorized: 'uncategorized'
-  tag: 'tag : '
+  tag: 'mot clé : '
 nav:
   current_page:
     other: 'Page %d '
   total_page:
-    other: 'of %d'
+    other: 'sur %d'
 sidebar:
-  follow: 'follow'
+  follow: 'suivre'
   newer: 'newer'
   older: 'older'
   recents: 'recents'
   archives: 'archives'
   categories: 'categories'
-  links: 'links'
-  tags: 'tags'
-  tag_cloud: 'tag cloud'
+  links: 'liens'
+  tags: 'mots clés'
+  tag_cloud: 'nuage de mots'
 article:
-  comments: 'Comments'
-  share: 'Share'
+  comments: 'Commentaires'
+  share: 'Partage'
