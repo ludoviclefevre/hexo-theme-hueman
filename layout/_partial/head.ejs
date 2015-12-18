@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= config.language %>">
 <head>
   <meta charset="utf-8">
   <%
@@ -40,7 +40,14 @@
 
   <% if (theme.logo){ %>
     <style type="text/css">
-      .logo { background-image:url(<%= theme.logo %>); }
+      .logo {
+        background-image:url(<%= theme.logo %>);
+        <% if(theme.logo_width && theme.logo_height) { %>
+        background-size: <%= theme.logo_width %> <%= theme.logo_height %>;
+        width: <%= theme.logo_width %>;
+        height: <%= theme.logo_height %>
+      <% } %>
+      }
     </style>
   <% } %>
 
