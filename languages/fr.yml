@@ -3,8 +3,8 @@ index:
   about: 'A propos'
   search: 'Recherche'
   archive: 'archive'
-  category: 'categorie : '
-  uncategorized: 'uncategorized'
+  category: 'catégorie : '
+  uncategorized: 'pas de catégorie'
   tag: 'mot clé : '
 nav:
   current_page:
@@ -13,11 +13,11 @@ nav:
     other: 'sur %d'
 sidebar:
   follow: 'suivre'
-  newer: 'newer'
-  older: 'older'
+  newer: 'plus récent'
+  older: 'plus ancien'
   recents: 'recents'
   archives: 'archives'
-  categories: 'categories'
+  categories: 'catégories'
   links: 'liens'
   tags: 'mots clés'
   tag_cloud: 'nuage de mots'
