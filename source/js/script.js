@@ -59,6 +59,7 @@
   });
 
   // Caption
+    /*
   $('.article-entry').each(function(i){
     $(this).find('img').each(function(){
       if ($(this).parent().hasClass('fancybox')) return;
@@ -73,14 +74,14 @@
     $(this).find('.fancybox').each(function(){
       $(this).attr('rel', 'article' + i);
     });
-  });
+  });*/
 
   if ($.fancybox){
     $('.fancybox').fancybox();
   }
 
   //Back to top
-  $("#back-to-top").on('click', function(){  
+  $("#back-to-top").on('click', function(){
     $('body,html').animate({scrollTop:0}, 600);
-  }); 
+  });
 })(jQuery);
