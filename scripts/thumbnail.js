@@ -5,6 +5,7 @@
 *     <%- thumbnail(post) %>
 */
 hexo.extend.helper.register('thumbnail', function (post) {
+    var config = this.config;
     var url = post.thumbnail || '';
     if (!url) {
         var imgPattern = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/ig;
@@ -25,6 +26,9 @@ hexo.extend.helper.register('thumbnail', function (post) {
                 }
             }
         }
+    }
+    else if(url.length>0 && config.post_asset_folder) {
+        url = post.path + url;
     }
     return url;
 });
