@@ -1,4 +1,4 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-single article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-single article-type-<%= post.layout %>" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="article-inner">
         <% if (post.link || post.title) { %>
             <header class="article-header">
@@ -15,6 +15,7 @@
         <footer class="article-footer">
             <%- partial('share/index', { post: post }) %>
         </footer>
+        <meta itemprop="image" content="<%- config.url + config.root + thumbnail(post) %>" width="355" height="255">
     </div>
 </article>
 <%- partial('comment/index') %>
