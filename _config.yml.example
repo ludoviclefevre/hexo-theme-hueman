@@ -1,53 +1,65 @@
-# Logo Url
-# Please enter an absolute path to your logo file
-# or remove the following line with replacing logo-header.png with your own logo
-logo:
-
-# Header
+# Menus
 menu:
-  Home: /
-  # Delete this row if you don't want categories in your header nav bar
-  Categories:
-  About: /about/index.html
+    Home: /hexo-theme-hueman/
+    # Delete this row if you don't want categories in your header nav bar
+    Categories:
+    About: /hexo-theme-hueman/about/index.html
 
-# Article list grouped by year
-groupByYear: true
+# Customize
+customize:
+    logo:
+        width: 165
+        height: 60
+        url: images/logo-header.png
+    theme_color: '#3b8dbd'
+    highlight: androidstudio
+    sidebar: left # sidebar position, options: left, right
+    thumbnail: true # enable posts thumbnail, options: true, false
+    favicon: # path to favicon
+    social_links: # for more icons, please see http://fontawesome.io/icons/#brand
+        twitter: /
+        facebook: /
+        google-plus: /
+        github: https://github.com/ppoffice/hexo-theme-hueman
+        weibo: /
+        rss: /
 
-# Content
-fancybox: true
-
-# Thumbnail
-thumbnail: true
-
-# Scroll Loading
-scrollLoading: true
-
-# Sidebar
-sidebar: left # sidebar's position (left or right)
-social_links:
-  twitter:
-  facebook:
-  google-plus:
-  github: https://github.com/ppoffice/hexo-theme-hueman
-  weibo:
-  rss:
+# Widgets
 widgets:
-- recent_posts
-- category
-- archive
-- tag
-- tagcloud
-- links
+    - recent_posts
+    - category
+    - archive
+    - tag
+    - tagcloud
+    - links
 
-# Links
-links:
-  Hexo: http://hexo.io
+# Search
+search:
+    swiftype: # enter swiftype install key here
+    baidu: false # you need to disable other search engines to use Baidu search, options: true, false
 
-# Don't Use Google APIs if you are in google-blocked areas
-use_google_apis: false
+# Comment
+comment:
+    disqus: hexo-theme-hueman # enter disqus shortname here
+    duoshuo: # enter duoshuo shortname here
+    youyan: # enter youyan uid here
+
+# Share
+share: default # options: jiathis, bdshare, addtoany, default
+
+# Plugins
+plugins:
+    fancybox: true # options: true, false
+    scrollLoading: true # options: true, false
+    google_analytics: # enter the tracking ID for your Google Analytics
+    baidu_analytics: # enter Baidu Analytics hash key
 
 # Miscellaneous
-google_analytics:
-favicon: /favicon.png
-fb_admins:
-fb_app_id:
+miscellaneous:
+    open_graph: # see http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id:
+        google_plus:
+    links:
+        Hexo: http://hexo.io
