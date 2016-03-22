@@ -1,0 +1,32 @@
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"<%- config.url +  url_for(page.path) %>"
+    },
+    "headline": "<%- page.title %>",
+    "image": {
+      "@type": "ImageObject",
+      "url": "<%- config.url + url_for(page.path + page.photos[0]) %>"
+    },
+    "datePublished": "<%- page.date.format() %>",
+    "dateModified": "<%- page.date.format() %>",
+    "author": {
+      "@type": "Person",
+      "name": "<%- config.author %>"
+    },
+     "publisher": {
+      "@type": "Organization",
+      "name": "<%= config.title %>",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<%= config.url + config. theme.customize.logo.url %>",
+        "width": 150,
+        "height": 50
+      }
+    },
+    "description": "<%- page.excerpt %>"
+  }
+</script>

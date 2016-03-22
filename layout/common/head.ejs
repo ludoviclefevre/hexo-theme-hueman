@@ -40,9 +40,7 @@
         <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="<%= theme.rssType || "application/atom+xml" %>" />
     <% } %>
 
-    <% if (theme.customize.favicon) { %>
-        <link rel="icon" href="<%- url_for(theme.customize.favicon) %>" />
-    <% } %>
+    <%- partial('favicon') %>
 
     <%- css('vendor/font-awesome/css/font-awesome.min') %>
     <%- css('vendor/titillium-web/styles') %>
@@ -52,4 +50,29 @@
 
     <%- js('vendor/jquery/2.0.3/jquery.min') %>
     <%- partial('plugin/scripts', { isHead: true }) %>
+
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "WebSite",
+      "name" : "<%= config.title %>",
+      "url" : "<%= config.url %>"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    { "@context" : "http://schema.org",
+      "@type" : "Organization",
+      "name" : "<%= config.title %>",
+      "url" : "<%= config.url %>",
+      "logo": "<%= theme.customize.logo.url %>",
+      "sameAs" : [
+      <% for (var i in theme.customize.social_links) { %>
+          <% if (theme.customize.social_links[i]) { %>
+            "<%- url_for(theme.customize.social_links[i]) %>",
+          <% } %>
+      <% } %>
+      ]
+    }
+    </script>
 </head>
