@@ -6,25 +6,27 @@
       "@type":"WebPage",
       "@id":"<%- config.url +  url_for(page.path) %>"
     },
-    "headline": "<%- page.title %>",
+    "headline": <%- JSON.stringify(page.title) %>,
     "image": {
       "@type": "ImageObject",
-      "url": "<%- config.url + url_for(page.path + page.photos[0]) %>"
+      "url": "<%- config.url + url_for(page.path + page.thumbnail) %>"
     },
     "datePublished": "<%- page.date.format() %>",
-    "dateModified": "<%- page.date.format() %>",
+    <% if(page.updated) { %>
+    "dateModified": "<%- page.updated.format() %>",
+    <% } %>
     "author": {
       "@type": "Person",
       "name": "<%- config.author %>"
     },
      "publisher": {
       "@type": "Organization",
-      "name": "<%= config.title %>",
+      "name": "<%= JSON.stringify(config.title) %>",
       "logo": {
         "@type": "ImageObject",
-        "url": "<%= config.url + config. theme.customize.logo.url %>",
-        "width": 150,
-        "height": 50
+        "url": "<%= theme.customize.logo.url %>",
+        "width": <%= theme.customize.logo.width %>,
+        "height": <%= theme.customize.logo.height %>
       }
     },
     "description": "<%- page.excerpt %>"

@@ -52,27 +52,32 @@
     <%- partial('plugin/scripts', { isHead: true }) %>
 
     <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "WebSite",
-      "name" : "<%= config.title %>",
-      "url" : "<%= config.url %>"
-    }
+      {
+        "@context" : "http://schema.org",
+        "@type" : "WebSite",
+        "name" : "<%= config.title %>",
+        "url" : "<%= config.url %>"
+      }
     </script>
 
     <script type="application/ld+json">
-    { "@context" : "http://schema.org",
-      "@type" : "Organization",
-      "name" : "<%= config.title %>",
-      "url" : "<%= config.url %>",
-      "logo": "<%= theme.customize.logo.url %>",
-      "sameAs" : [
-      <% for (var i in theme.customize.social_links) { %>
-          <% if (theme.customize.social_links[i]) { %>
-            "<%- url_for(theme.customize.social_links[i]) %>",
-          <% } %>
-      <% } %>
-      ]
-    }
+      { "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "<%= config.title %>",
+        "url" : "<%= config.url %>",
+        "logo": "<%= theme.customize.logo.url %>",
+        "sameAs" : [
+        <%
+          var linkIndex = 0;
+          _.each(theme.customize.social_links, function(link) {
+        %>
+            <% if (linkIndex>0) { %>,<% } %>
+            <% if (link) { %>
+              "<%- url_for(link) %>"
+            <% } %>
+            <% linkIndex++; %>
+        <% }); %>
+        ]
+      }
     </script>
 </head>
